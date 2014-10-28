@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/gitroot/dotfiles/.zshrc ~/.zshrc
