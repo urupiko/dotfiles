@@ -29,3 +29,8 @@ bindkey -v # vi mode
 
 #Alias
 alias pp='pwd | pbcopy'
+
+# tmux自動起動
+if [ -z $TMUX ]; then
+  tmux
+fi
