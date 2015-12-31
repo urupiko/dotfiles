@@ -115,7 +115,7 @@ alias pp='pwd | pbcopy'
 # LOCAL SETTINGS 
 #-------------------------------------------------------------------------------
 
-if [ ! -e .zshrc.local ]; then
+if [ -e .zshrc.local ]; then
   source .zshrc.local
 fi
 
@@ -124,7 +124,7 @@ fi
 #-------------------------------------------------------------------------------
 
 # tmux自動起動
-if [ -z $TMUX ]; then
+if [ ! -z $TMUX ]; then
   tmux
 fi
 
