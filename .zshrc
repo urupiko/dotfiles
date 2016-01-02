@@ -120,6 +120,24 @@ if [ -e .zshrc.local ]; then
 fi
 
 #-------------------------------------------------------------------------------
+# RANGER 
+#-------------------------------------------------------------------------------
+
+ranger-cd () {
+    tempfile='/tmp/chosendir'
+    ranger --choosedir="$tempfile" "${@:-$(pwd)}" < $TTY
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+    zle redisplay
+}
+
+zle -N ranger-cd
+bindkey '^o' ranger-cd
+
+#-------------------------------------------------------------------------------
 # AUTO EXEC
 #-------------------------------------------------------------------------------
 
