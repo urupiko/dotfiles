@@ -131,7 +131,7 @@ ranger-cd () {
         cd -- "$(cat "$tempfile")"
     fi
     rm -f -- "$tempfile"
-    zle redisplay
+    zle reset-prompt
 }
 
 zle -N ranger-cd
