@@ -18,6 +18,12 @@ SAVEHIST=5000
 # 直前に実行したコマンドと同じならヒストリに記録しない
 setopt hist_ignore_dups
 
+# 履歴中の重複行をファイル記録前に無くす
+setopt hist_ignore_all_dups       
+
+# スペースで始まるコマンドはヒストリに入れない
+setopt hist_ignore_space
+
 # 履歴を共有
 setopt share_history
 
@@ -67,16 +73,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 #-------------------------------------------------------------------------------
-# KEY BIND
-#-------------------------------------------------------------------------------
-# モード変更遅延を0.1秒に短縮 (デフォルト0.4秒？)
-export KEYTIMEOUT=1
-
-# vi キーバインドを使用
-bindkey -d # reset
-bindkey -v # vi mode
-
-#-------------------------------------------------------------------------------
 # PROMPT
 #-------------------------------------------------------------------------------
 RPROMPT='[%F{green}%d%f]'
@@ -120,7 +116,7 @@ if [ -e .zshrc.local ]; then
 fi
 
 #-------------------------------------------------------------------------------
-# RANGER 
+# Filer
 #-------------------------------------------------------------------------------
 
 ranger-cd () {
@@ -133,16 +129,66 @@ ranger-cd () {
     rm -f -- "$tempfile"
     zle reset-prompt
 }
-
 zle -N ranger-cd
-bindkey '^o' ranger-cd
+
+vifm-cd () {
+    tempfile='/tmp/chosendir'
+    vifm --choose-dir="$tempfile" "${@:-$(pwd)}" < $TTY
+    test -f "$tempfile" &&
+    if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+        cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+    zle reset-prompt
+}
+zle -N vifm-cd 
+
+#-------------------------------------------------------------------------------
+# Zaw
+#-------------------------------------------------------------------------------
+
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 500 # cdrの履歴を保存する個数
+zstyle ':chpwd:*' recent-dirs-default yes
+zstyle ':completion:*' recent-dirs-insert both
+
+source ~/.zsh/zaw/zaw.zsh
+zstyle ':filter-select:highlight' selected fg=white,bg=black,standout
+zstyle ':filter-select' case-insensitive yes
+
+#-------------------------------------------------------------------------------
+# KEY BIND
+#-------------------------------------------------------------------------------
+# モード変更遅延を0.1秒に短縮 (デフォルト0.4秒？)
+export KEYTIMEOUT=1
+
+# vi キーバインドを使用
+bindkey -d # reset
+bindkey -v # vi mode
+
+# 複数行入力
+bindkey '^j' self-insert
+
+# bindkey '^o' ranger-cd
+bindkey '^v' vifm-cd
+
+bindkey '^@' zaw-cdr
+bindkey '^R' zaw-history
+bindkey '^X^P' zaw-process
+bindkey '^A' zaw-tmux
+
+# k で上書きできなかったので大人しくカスタマイズをやめる
+# autoload -U filter-select; filter-select -i
+# bindkey -M filterselect '^k' up-line-or-history
+# bindkey -M filterselect '^j' down-line-or-history
 
 #-------------------------------------------------------------------------------
 # AUTO EXEC
 #-------------------------------------------------------------------------------
 
 # tmux自動起動
-if [ ! -z $TMUX ]; then
-  tmux
+if [ -z $TMUX ]; then
+  /usr/local/bin/tmux
 fi
 
