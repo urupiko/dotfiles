@@ -1,0 +1,24 @@
+[
+  // Vitageous
+  { "keys": ["j", "j"], "command": "_enter_normal_mode", "args": {"mode": "mode_insert"}, "context": [{"key": "vi_insert_mode_aware"}] },
+  // { "keys": ["escape"], "command": "imeoff", "context":[{ "key": "vi_insert_mode_aware"}]},
+
+  // Origami
+  { "keys": ["super+l"], "command": "travel_to_pane", "args": {"direction": "right"} },
+  { "keys": ["super+h"], "command": "travel_to_pane", "args": {"direction": "left"} },
+  //{ "keys": ["super+k", "k"], "command": "travel_to_pane", "args": {"direction": "up"} },
+  //{ "keys": ["super+k", "j"], "command": "travel_to_pane", "args": {"direction": "down"} },
+  { "keys": ["super+k", "k"], "command": "create_pane", "args": {"direction": "up"} },
+  { "keys": ["super+k", "l"], "command": "create_pane", "args": {"direction": "right"} },
+  { "keys": ["super+k", "j"], "command": "create_pane", "args": {"direction": "down"} },
+  { "keys": ["super+k", "h"], "command": "create_pane", "args": {"direction": "left"} },
+  { "keys": ["super+k", "q"], "command": "destroy_pane", "args": {"direction": "self"} },
+
+  { "keys": ["ctrl+:"], "command": "insert_date", "args": {"format": "%Y-%m-%d"} },
+
+  // uruc tab  
+  { "keys": ["ctrl+j"], "command": "prev_view" },
+  { "keys": ["ctrl+k"], "command": "next_view" },
+
+  { "keys": ["f7"], "command": "unbound"},
+]
