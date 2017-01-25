@@ -1,14 +1,21 @@
 #!/bin/sh
 
-ln -sf ~/gitroot/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/gitroot/dotfiles/.zshrc ~/
 
-ln -sf ~/gitroot/dotfiles/ranger/rc.conf ~/.config/ranger/
-ln -sf ~/gitroot/dotfiles/ranger/rifle.conf ~/.config/ranger/
-ln -sf ~/gitroot/dotfiles/ranger/scope.sh ~/.config/ranger/
+dir=~/.config/tmux; [ ! -e $dir ] && mkdir -p $dir
+ln -sf ~/gitroot/dotfiles/.tmux.conf ~/.config/tmux/
+# ln -sf ~/gitroot/dotfiles/ranger/rc.conf ~/.config/ranger/
+# ln -sf ~/gitroot/dotfiles/ranger/rifle.conf ~/.config/ranger/
+# ln -sf ~/gitroot/dotfiles/ranger/scope.sh ~/.config/ranger/
 
+dir=~/.config/vifm; [ ! -e $dir ] && mkdir -p $dir
 ln -sf ~/gitroot/dotfiles/vifm/vifmrc ~/.config/vifm/
 
-ln -sf "${HOME}/gitroot/dotfiles/sublime/Default (OSX).sublime-keymap" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap"
-ln -sf "${HOME}/gitroot/dotfiles/sublime/Package Control.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings"
-ln -sf "${HOME}/gitroot/dotfiles/sublime/Preferences.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings" 
-ln -sf "${HOME}/gitroot/dotfiles/sublime/insert_date.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/insert_date.sublime-settings" 
+dir=~/.config/peco; [ ! -e $dir ] && mkdir -p $dir
+ln -sf ~/gitroot/dotfiles/peco/config.json ~/.config/peco/
+
+dir="${HOME}/Library/Application Support/Sublime Text 3/Packages/User"; [ ! -e $dir ] && mkdir -p $dir
+ln -sf "${HOME}/gitroot/dotfiles/sublime/Default (OSX).sublime-keymap" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
+ln -sf "${HOME}/gitroot/dotfiles/sublime/Package Control.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
+ln -sf "${HOME}/gitroot/dotfiles/sublime/Preferences.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
+ln -sf "${HOME}/gitroot/dotfiles/sublime/insert_date.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"

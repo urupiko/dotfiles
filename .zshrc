@@ -4,10 +4,8 @@
 
 # ヒストリファイルパス
 HISTFILE=~/.zsh_history
-
 # メモリにのせる履歴数
 HISTSIZE=2000
-
 # ファイルに記録する履歴数
 SAVEHIST=5000
 
@@ -17,10 +15,8 @@ SAVEHIST=5000
 
 # 直前に実行したコマンドと同じならヒストリに記録しない
 setopt hist_ignore_dups
-
 # 履歴中の重複行をファイル記録前に無くす
 setopt hist_ignore_all_dups       
-
 # スペースで始まるコマンドはヒストリに入れない
 setopt hist_ignore_space
 
@@ -105,7 +101,13 @@ function alc() {
     fi
 }
 
+function ptvi () {
+  vi $(pt "$@" | peco --query "$LBUFFER" | awk -F : '{print "+" $2 " " $1}')
+}
+
 alias pp='pwd | pbcopy'
+
+# alias vi='/usr/local/bin/nvim'
 
 #-------------------------------------------------------------------------------
 # LOCAL SETTINGS 
@@ -178,17 +180,28 @@ bindkey '^R' zaw-history
 bindkey '^X^P' zaw-process
 bindkey '^A' zaw-tmux
 
+bindkey -r '^k'
+
 # k で上書きできなかったので大人しくカスタマイズをやめる
-# autoload -U filter-select; filter-select -i
-# bindkey -M filterselect '^k' up-line-or-history
-# bindkey -M filterselect '^j' down-line-or-history
+autoload -U filter-select; filter-select -i
+bindkey -M filterselect '^k' up-line-or-history
+bindkey -M filterselect '^j' down-line-or-history
 
 #-------------------------------------------------------------------------------
 # AUTO EXEC
 #-------------------------------------------------------------------------------
 
 # tmux自動起動
-if [ -z $TMUX ]; then
-  /usr/local/bin/tmux
+if [[ ! -n $TMUX ]]; then
+  ID="`tmux list-sessions`"
+  if [[ -z "$ID" ]]; then
+    tmux new-session -f ~/.config/tmux/.tmux.conf
+  fi
+  create_new_session="Create New Session"
+  ID="$ID\n${create_new_session}:"
+  ID="`echo $ID | peco | cut -d: -f1`"
+  if [[ "$ID" = "${create_new_session}" ]]; then
+     tmux new-session -f ~/.config/tmux/.tmux.conf
+  fi
+  tmux attach-session -t "$ID" -f ~/.config/tmux/.tmux.conf
 fi
-
