@@ -19,3 +19,6 @@ ln -sf "${HOME}/gitroot/dotfiles/sublime/Default (OSX).sublime-keymap" "${HOME}/
 ln -sf "${HOME}/gitroot/dotfiles/sublime/Package Control.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
 ln -sf "${HOME}/gitroot/dotfiles/sublime/Preferences.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
 ln -sf "${HOME}/gitroot/dotfiles/sublime/insert_date.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
+ln -sf "${HOME}/gitroot/dotfiles/sublime/Ruby.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
+
+
