@@ -7,10 +7,13 @@
 	[
 		"ConvertToUTF8",
 		"EncodingHelper",
+		"FileDiffs",
 		"InsertDate",
 		"Origami",
 		"Package Control",
+		"PlainTasks",
 		"Predawn",
+		"Super Calculator",
 		"Vintageous"
 	]
 }
