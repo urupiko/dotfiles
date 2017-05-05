@@ -18,5 +18,5 @@ popd
 
 chsh -s /bin/zsh
 
-sh ../mklinks.sh
+sh ./mklinks.sh
 

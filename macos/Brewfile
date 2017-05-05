@@ -4,6 +4,7 @@ tap 'caskroom/cask'
 tap 'neovim/neovim'
 tap 'monochromegane/pt'
 
+brew 'tree'
 brew 'vifm'
 brew 'git'
 # brew 'w3m'
