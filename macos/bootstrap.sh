@@ -18,5 +18,17 @@ popd
 
 chsh -s /bin/zsh
 
+RUBY_VERSION=2.2.2
+cat <<"EOF" >> ~/.profile
+
+export PATH="${HOME}/.rbenv/bin:${PATH}"
+eval "$(rbenv init -)"
+
+EOF
+source ~/.profile
+rbenv --version
+rbenv install ${RUBY_VERSION}
+rbenv global ${RUBY_VERSION}
+
 sh ./mklinks.sh
 
