@@ -48,6 +48,7 @@ def get_profile_path
 end
 
 def zip_profile(source_dir, zip_path)
+  source_dir.gsub!(::File::ALT_SEPARATOR) { ::File::SEPARATOR }
   puts "zipping profile : #{source_dir}"
 
   source_files = Dir.glob("#{source_dir}**/*")
