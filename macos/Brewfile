@@ -1,0 +1,25 @@
+cask_args appdir: '/Applications'
+
+tap 'caskroom/cask'
+tap 'neovim/neovim'
+tap 'monochromegane/pt'
+
+brew 'tree'
+brew 'vifm'
+brew 'git'
+# brew 'w3m'
+brew 'tmux'
+brew 'reattach-to-user-namespace' # pbcopyに必要
+brew 'nkf'
+brew 'neovim'
+brew 'peco'
+brew 'pt'
+brew 'rbenv'
+brew 'ruby-build'
+
+cask 'iterm2'
+cask 'sourcetree'
+cask 'virtualbox'
+cask 'sublime-text'
+
+# cask 'kobito'
