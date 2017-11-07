@@ -2,14 +2,9 @@
 
 brew bundle
 
-# memo: 透明とかのプロファイル設定はdefaultsコマンドで変更が面倒なので諦め。
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool false
-defaults write com.googlecode.iterm2 HideScrollbar -bool true
-defaults write com.googlecode.iterm2 Hotkey -bool true
-defaults write com.googlecode.iterm2 'HotkeyChar' '63236'
-defaults write com.googlecode.iterm2 'HotkeyCode' '122'
-defaults write com.googlecode.iterm2 'HotkeyModifiers' '8388864'
+# Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 mkdir -p ~/.zsh
 pushd ~/.zsh
