@@ -21,4 +21,5 @@ ln -sf "${HOME}/gitroot/dotfiles/sublime/Preferences.sublime-settings" "${HOME}/
 ln -sf "${HOME}/gitroot/dotfiles/sublime/insert_date.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
 ln -sf "${HOME}/gitroot/dotfiles/sublime/Ruby.sublime-settings" "${HOME}/Library/Application Support/Sublime Text 3/Packages/User/"
 
-
+dir=~/.config/nvim; [ ! -e $dir ] && mkdir -p $dir
+ln -sf ~/gitroot/dotfiles/neovim/init.vim ~/.config/nvim/
