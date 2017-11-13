@@ -19,7 +19,7 @@ brew 'ruby-build'
 
 cask 'iterm2'
 cask 'sourcetree'
-cask 'virtualbox'
+# cask 'virtualbox' # Failed on High Sierra
 cask 'sublime-text'
 
 # cask 'kobito'
