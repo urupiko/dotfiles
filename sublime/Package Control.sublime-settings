@@ -6,7 +6,6 @@
 	"installed_packages":
 	[
 		"ConvertToUTF8",
-		"EncodingHelper",
 		"FileDiffs",
 		"InsertDate",
 		"Origami",
