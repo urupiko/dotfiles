@@ -15,6 +15,9 @@ defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 # Avoid creating `.DS_Store` files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+# Make key repeat speed faster
+defaults write -g KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 10
 
 
 # Tell iTerm2 to use the custom preferences in the directory
