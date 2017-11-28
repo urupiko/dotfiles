@@ -195,13 +195,13 @@ bindkey -M filterselect '^j' down-line-or-history
 if [[ ! -n $TMUX ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
-    tmux new-session -f ~/.config/tmux/.tmux.conf
+    tmux new-session
   fi
   create_new_session="Create New Session"
   ID="$ID\n${create_new_session}:"
   ID="`echo $ID | peco | cut -d: -f1`"
   if [[ "$ID" = "${create_new_session}" ]]; then
-     tmux new-session -f ~/.config/tmux/.tmux.conf
+     tmux new-session
   fi
-  tmux attach-session -t "$ID" -f ~/.config/tmux/.tmux.conf
+  tmux attach-session -t "$ID" 
 fi

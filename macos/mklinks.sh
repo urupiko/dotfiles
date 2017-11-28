@@ -3,7 +3,7 @@
 ln -sf ~/gitroot/dotfiles/.zshrc ~/
 
 dir=~/.config/tmux; [ ! -e $dir ] && mkdir -p $dir
-ln -sf ~/gitroot/dotfiles/.tmux.conf ~/.config/tmux/
+ln -sf ~/gitroot/dotfiles/.tmux.conf ~/
 # ln -sf ~/gitroot/dotfiles/ranger/rc.conf ~/.config/ranger/
 # ln -sf ~/gitroot/dotfiles/ranger/rifle.conf ~/.config/ranger/
 # ln -sf ~/gitroot/dotfiles/ranger/scope.sh ~/.config/ranger/
