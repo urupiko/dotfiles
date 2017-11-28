@@ -24,6 +24,8 @@ defaults write -g InitialKeyRepeat -int 10
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+rm -rf ~/.config/vifm/colors
+git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
 
 mkdir -p ~/.zsh
 pushd ~/.zsh
