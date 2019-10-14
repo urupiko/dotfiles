@@ -35,7 +35,7 @@ set norunexec
 set iec
 colorscheme Zenburn_1 
 " set fusehome=/tmp/vifm_FUSE
-set timefmt=$y/%m/%d\ %H:%M
+set timefmt=%y/%m/%d\ %H:%M
 set wildmenu
 set ignorecase
 set smartcase
@@ -43,8 +43,9 @@ set nohlsearch
 set incsearch
 set scrolloff=4
 set slowfs=curlftpfs
-set statusline="  %t%= %A %10u:%-7g %15s %20d  "
+set statusline="  %t%= %A %10u:%-7g %15s %22d  "
 set dotfiles 
+set confirm=permdelete
 
 " ------------------------------------------------------------------------------
 
@@ -221,7 +222,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " ------------------------------------------------------------------------------
 
-set viewcolumns=-{name}..,{ctime},6{size}.
+set viewcolumns=-{name}..,{ctime},15{size}.
 
 " Filter-out build and temporary files
 "
@@ -266,6 +267,9 @@ nnoremap ,C :!mvim --remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
+
+" Sublime Text
+nnoremap ,s :!subl %f<cr>
 
 " ------------------------------------------------------------------------------
 
