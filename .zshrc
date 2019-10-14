@@ -41,7 +41,7 @@ setopt auto_cd
 #-------------------------------------------------------------------------------
 
 # ls結果の色づけ
-export LSCOLORS=exfxcxdxbxegedabagacad
+export LSCOLORS=Gxfxcxdxbxegedabagacad
 alias ls="ls -G"
 
 # ls補完結果にも色づけ
