@@ -5,14 +5,16 @@
 	],
 	"installed_packages":
 	[
+		"Codecs33",
 		"ConvertToUTF8",
 		"FileDiffs",
 		"InsertDate",
+		"Open URL",
 		"Origami",
 		"Package Control",
 		"PlainTasks",
 		"Predawn",
-		"Super Calculator",
+		"Pretty JSON",
 		"Vintageous"
 	]
 }

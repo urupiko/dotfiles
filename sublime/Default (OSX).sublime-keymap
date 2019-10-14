@@ -16,6 +16,8 @@
 
   { "keys": ["ctrl+:"], "command": "insert_date", "args": {"format": "%Y-%m-%d"} },
 
+  { "keys": ["ctrl+o"], "command": "open_url" },
+
   // uruc tab  
   { "keys": ["ctrl+j"], "command": "prev_view" },
   { "keys": ["ctrl+k"], "command": "next_view" },
