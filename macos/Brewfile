@@ -15,7 +15,8 @@ tap 'monochromegane/pt'
 
 
 
-# cask_args appdir: '/Applications'
+cask_args appdir: '/Applications'
+cask 'visual-studio-code'
 # tap 'caskroom/cask'
 # cask 'iterm2'
 # cask 'sourcetree'
