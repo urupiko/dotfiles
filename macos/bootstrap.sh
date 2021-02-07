@@ -1,10 +1,14 @@
 #!/bin/sh
 
+# Homebrew
+################################################################################
 if !(type "brew" > /dev/null 2>&1); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 brew bundle
 
+# System Settings
+################################################################################
 # System Settings Tweak
 defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
@@ -27,11 +31,13 @@ defaults write -g InitialKeyRepeat -int 10
 # defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
 # defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+# Vifm 
+################################################################################
 rm -rf ~/.config/vifm/colors
 git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
 
 # Zaw 
-######
+################################################################################
 mkdir -p ~/.zsh
 pushd ~/.zsh
 git clone git://github.com/zsh-users/zaw.git
@@ -41,11 +47,13 @@ chsh -s /bin/zsh
 compaudit | xargs chmod g-w
 
 # Git
+################################################################################
 git config --global user.name "urupiko"
 git config --global core.editor 'nvim'
 git config --global color.ui true
 
-
+# Ruby
+################################################################################
 RUBY_VERSION=2.7.2
 cat <<"EOF" >> ~/.profile
 
@@ -61,4 +69,3 @@ rbenv global ${RUBY_VERSION}
 
 
 sh ./mklinks.sh
-
