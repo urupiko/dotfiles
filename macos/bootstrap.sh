@@ -14,6 +14,7 @@ defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock tilesize -int 50
 # Enable `Tap to click`
+defaults write com.apple.driver.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
 # Disable auto run for image
 defaults write com.apple.ImageCapture disableHotPlug -bool NO
