@@ -268,8 +268,8 @@ nnoremap ,C :!mvim --remote-tab-silent $MYVIFMRC &<cr>
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
 
-" Sublime Text
-nnoremap ,s :!subl %f<cr>
+" Visual Studio Code 
+nnoremap ,s :!code %f<cr>
 
 " ------------------------------------------------------------------------------
 

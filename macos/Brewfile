@@ -1,26 +1,25 @@
-cask_args appdir: '/Applications'
-
-tap 'caskroom/cask'
-tap 'neovim/neovim'
-tap 'monochromegane/pt'
-
 brew 'tree'
 brew 'vifm'
-brew 'git'
+# brew 'git'
 # brew 'w3m'
 brew 'tmux'
-brew 'reattach-to-user-namespace' # pbcopyに必要
+# brew 'reattach-to-user-namespace' # pbcopyに必要 # 2.6から不要になったらしい
 brew 'nkf'
-brew 'neovim'
 brew 'peco'
-brew 'pt'
 brew 'rbenv'
 brew 'ruby-build'
+brew 'neovim'
 
-cask 'iterm2'
-cask 'sourcetree'
+brew 'pt'
+tap 'monochromegane/pt'
+
+
+
+# cask_args appdir: '/Applications'
+# tap 'caskroom/cask'
+# cask 'iterm2'
+# cask 'sourcetree'
 # cask 'virtualbox' # Failed on High Sierra
-cask 'sublime-text'
-cask 'xquartz'
-
+# cask 'sublime-text'
+# cask 'xquartz'
 # cask 'kobito'

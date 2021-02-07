@@ -1,5 +1,8 @@
 #!/bin/sh
 
+if !(type "brew" > /dev/null 2>&1); then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 brew bundle
 
 # System Settings Tweak
@@ -21,19 +24,29 @@ defaults write -g InitialKeyRepeat -int 10
 
 
 # Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
+# defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 rm -rf ~/.config/vifm/colors
 git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
 
+# Zaw 
+######
 mkdir -p ~/.zsh
 pushd ~/.zsh
 git clone git://github.com/zsh-users/zaw.git
 popd
 chsh -s /bin/zsh
+# Supress insecure direcotry warnings
+compaudit | xargs chmod g-w
 
-RUBY_VERSION=2.2.2
+# Git
+git config --global user.name "urupiko"
+git config --global core.editor 'nvim'
+git config --global color.ui true
+
+
+RUBY_VERSION=2.7.2
 cat <<"EOF" >> ~/.profile
 
 export PATH="${HOME}/.rbenv/bin:${PATH}"
