@@ -67,9 +67,11 @@ mkdir -p ~/.zsh
 pushd ~/.zsh
 git clone git://github.com/zsh-users/zaw.git
 popd
-chsh -s /bin/zsh
+
+# Memo: these are no longer necessary
+# chsh -s /bin/zsh
 # Supress insecure direcotry warnings
-compaudit | xargs chmod g-w
+# compaudit | xargs chmod g-w
 
 # Git
 ################################################################################
