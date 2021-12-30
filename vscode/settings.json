@@ -1,0 +1,10 @@
+{
+    "workbench.colorTheme": "Abyss",
+    "git.autofetch": true,
+    "[python]": {
+        // 1つのタブに相当する半角スペースの数
+        "editor.tabSize": 4
+    },
+    "editor.renderWhitespace": "all",
+    "telemetry.telemetryLevel": "off"
+}
