@@ -34,6 +34,11 @@ sudo mdutil -a -i off
 # defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
 # defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+# VS Code key repeat
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false
+defaults write com.visualstudio.code.oss ApplePressAndHoldEnabled -bool false
+
 # Dock
 ################################################################################
 dockutil --remove 'Safari'
