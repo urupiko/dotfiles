@@ -48,10 +48,10 @@ dockutil --remove 'リマインダー'
 dockutil --remove '連絡先'
 dockutil --remove 'ミュージック'
 dockutil --remove 'FaceTime'
-dockutil --remove 'マップ'                                                                                                       [/Users/uruc/gitroot/dotfiles/macos]
-dockutil --remove '写真'                                                                                                         [/Users/uruc/gitroot/dotfiles/macos]
-dockutil --remove 'メール'                                                                                                       [/Users/uruc/gitroot/dotfiles/macos]
-dockutil --remove 'Podcast'                                                                                                      [/Users/uruc/gitroot/dotfiles/macos]
+dockutil --remove 'マップ'
+dockutil --remove '写真'
+dockutil --remove 'メール'
+dockutil --remove 'Podcast'
 dockutil --remove 'メモ'
 
 dockutil --add '/Applications/iTerm.app' --label 'iTerm'
