@@ -27,10 +27,34 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 10
 
+# Disable Spotlight
+sudo mdutil -a -i off
 
 # Tell iTerm2 to use the custom preferences in the directory
 # defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/gitroot/dotfiles/iterm2"
 # defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# Dock
+################################################################################
+dockutil --remove 'Safari'
+dockutil --remove 'TV'
+dockutil --remove 'メッセージ'
+dockutil --remove 'リマインダー'
+dockutil --remove '連絡先'
+dockutil --remove 'ミュージック'
+dockutil --remove 'FaceTime'
+dockutil --remove 'マップ'                                                                                                       [/Users/uruc/gitroot/dotfiles/macos]
+dockutil --remove '写真'                                                                                                         [/Users/uruc/gitroot/dotfiles/macos]
+dockutil --remove 'メール'                                                                                                       [/Users/uruc/gitroot/dotfiles/macos]
+dockutil --remove 'Podcast'                                                                                                      [/Users/uruc/gitroot/dotfiles/macos]
+dockutil --remove 'メモ'
+
+dockutil --add '/Applications/iTerm.app' --label 'iTerm'
+dockutil --add '/Applications/Microsoft To Do.app' --label 'ToDo'
+dockutil --add '/Applications/p4v.app' --label 'P4V'
+dockutil --add '/Applications/Visual Studio Code.app' --label 'VS Code'
+dockutil --add '/Applications/Google Chrome.app' --label 'Chrome'
+dockutil --add '/Applications/Slack.app' --label 'Slack'
 
 # Vifm 
 ################################################################################
