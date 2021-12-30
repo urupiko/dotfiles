@@ -82,13 +82,13 @@ git config --global color.ui true
 # Ruby
 ################################################################################
 RUBY_VERSION=2.7.2
-cat <<"EOF" >> ~/.profile
+cat <<"EOF" >> ~/.zprofile
 
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"
 
 EOF
-source ~/.profile
+source ~/.zprofile
 rbenv --version
 rbenv install ${RUBY_VERSION}
 rbenv global ${RUBY_VERSION}
