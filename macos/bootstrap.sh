@@ -65,6 +65,7 @@ dockutil --add '/Applications/Slack.app' --label 'Slack'
 ################################################################################
 rm -rf ~/.config/vifm/colors
 git clone https://github.com/vifm/vifm-colors ~/.config/vifm/colors
+git clone https://github.com/cirala/vifm_devicons ~/.config/vifm/scripts
 
 # Zaw 
 ################################################################################

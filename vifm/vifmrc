@@ -33,7 +33,8 @@ set novimhelp
 set norunexec
 " set noiec
 set iec
-colorscheme Zenburn_1 
+" colorscheme Zenburn_1 
+colorscheme iceberg 
 " set fusehome=/tmp/vifm_FUSE
 set timefmt=%y/%m/%d\ %H:%M
 set wildmenu
@@ -287,3 +288,6 @@ nnoremap ,s :!code %f<cr>
 " Block particular shortcut
 "
 " nnoremap <left> <nop>
+
+
+source ~/.config/vifm/scripts/vifm_devicons/favicons.vifm
