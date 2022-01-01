@@ -26,6 +26,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Make key repeat speed faster
 defaults write -g KeyRepeat -int 1
 defaults write -g InitialKeyRepeat -int 10
+# Show the ~/Library folder
+chflags nohidden ~/Library
 
 # Disable Spotlight
 sudo mdutil -a -i off
