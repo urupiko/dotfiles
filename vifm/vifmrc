@@ -223,7 +223,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " ------------------------------------------------------------------------------
 
-set viewcolumns=-{name}..,{ctime},15{size}.
+set viewcolumns=-50{name}..,{ctime},15{size}.
 
 " Filter-out build and temporary files
 "
